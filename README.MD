@@ -1,3 +1,4 @@
+
 ![yae thumbnail](https://raw.githubusercontent.com/MisfiT2020/src/d1f6c7d89cfde9b4263eec2f86cca965471322a8/yae/y2.png)
 
 <h1 align="center"> Waifu-Python </h1>
@@ -14,6 +15,14 @@ A project born out of boredom, designed to simplify and reduce the code related 
   </a>
 </div>
 
+
+## Raiden API
+
+You can also use the Raiden API with this project:
+
+- API: https://api.raiden.ovh
+- Documentation: https://api.raiden.ovh/docs
+- Playground: https://raiden.ovh/api
 
 ## Installation
 
@@ -131,8 +140,9 @@ waifu-python kemono "raiden shogun" --nsfw --limit 3
 | [Waifu.im](https://www.waifu.im/)       | ✓       | ✓    |
 | [Waifu.pics](https://waifu.pics/)       | ✓       | ✓    |
 | [Zerochan](https://www.zerochan.net/)   | ✓       | -    |
+| **[Raiden API](https://api.raiden.ovh/)**| ✓       | -    |
 
-🔹 `Hijiribe` as `hiji` in cli
+> Playground: https://raiden.ovh/api — Documentation: https://api.raiden.ovh/docs
 
 
 ## Usage Example
