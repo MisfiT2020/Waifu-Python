@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 from pathlib import Path
 
-long_description = (Path(__file__).parent / "README.md").read_text(encoding="utf-8")
+long_description = (Path(__file__).parent / "README.MD").read_text(encoding="utf-8")
 
 setup(
     name="waifu-python",
-    version="1.9.3",
+    version="1.9.4",
     packages=find_packages(),
     install_requires=["httpx", "gallery-dl", "httpx_socks", "python-dotenv"],
     author="Misfit",
