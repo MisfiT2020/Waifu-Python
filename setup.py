@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 from pathlib import Path
 
-long_description = (Path(__file__).parent / "README.MD").read_text()
+long_description = (Path(__file__).parent / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="waifu-python",
-    version="1.9.2",
+    version="1.9.3",
     packages=find_packages(),
     install_requires=["httpx", "gallery-dl", "httpx_socks", "python-dotenv"],
     author="Misfit",
@@ -16,7 +16,7 @@ setup(
     long_description_content_type="text/markdown",
     entry_points={
         'console_scripts': [
-            'waifu-python=waifu_python.__main__:main', 
+            'waifu-python=waifu_python.__main__:main',
         ],
     },
 )

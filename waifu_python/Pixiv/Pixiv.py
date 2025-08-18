@@ -315,9 +315,9 @@ class Pixiv:
         self,
         illust_id: Union[int, str],
         filter: str = "for_ios",
-        seed_illust_ids: Union[int, str, list[str]] | None = None,
+        seed_illust_ids: Optional[Union[int, str, list[str]]] = None,
         offset: Union[int, str, None] = None,
-        viewed: Union[str, list[str]] | None = None,
+        viewed: Optional[Union[str, list[str]]] = None,
         req_auth: bool = True,
     ) -> Optional[dict]:
         url = f"{self.hosts}/v2/illust/related"

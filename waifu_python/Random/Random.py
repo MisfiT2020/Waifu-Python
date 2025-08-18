@@ -77,7 +77,8 @@ class RandomWaifu:
     async def _try_function(cls, func: Callable, service_cls: type, tag: Optional[str], limit: int) -> Optional[str]:
         try:
             if tag:
-                
+                if service_cls in (WaifuIm, WaifuPics, NekosBest, NSFWBot, PicRe, PurrBot):
+                    return None
                 if hasattr(service_cls, 'validate_tag'):
                     is_valid = await service_cls.validate_tag(tag)
                     if not is_valid:
@@ -125,6 +126,8 @@ class RandomWaifu:
         random.shuffle(funcs)
         results = []
         for func, svc, _ in funcs:
+            if tag and svc in (WaifuIm, WaifuPics, NekosBest, NSFWBot, PicRe, PurrBot):
+                continue
             result = await cls._call_Random_func(func, tag, limit)
             
             if not result or (isinstance(result, dict) and "error" in result):
@@ -153,6 +156,8 @@ class RandomWaifu:
         results = []
         
         for func, svc, _ in funcs:
+            if tag and svc in (WaifuIm, WaifuPics, NekosBest, NSFWBot, PicRe, PurrBot):
+                continue
             result = await cls._call_Random_func(func, tag, limit)
             if not result or (isinstance(result, dict) and "error" in result):
                 continue
@@ -178,6 +183,8 @@ class RandomWaifu:
                  if svc == PurrBot and 'gif' in f.__name__ and 'nsfw' not in f.__name__]
         random.shuffle(funcs)
         for func, svc, _ in funcs:
+            if tag and svc in (WaifuIm, WaifuPics, NekosBest, NSFWBot, PicRe, PurrBot):
+                continue
             result = await cls._call_Random_func(func, tag, limit)
             if result:
                 return result
@@ -192,6 +199,8 @@ class RandomWaifu:
                  if svc == PurrBot and 'gif' in f.__name__ and 'nsfw' in f.__name__]
         random.shuffle(funcs)
         for func, svc, _ in funcs:
+            if tag and svc in (WaifuIm, WaifuPics, NekosBest, NSFWBot, PicRe, PurrBot):
+                continue
             result = await cls._call_Random_func(func, tag, limit)
             if result:
                 return result

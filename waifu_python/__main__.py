@@ -1,5 +1,6 @@
 import sys
 import asyncio
+import secrets
 from dotenv import load_dotenv  
 
 load_dotenv()                   
@@ -43,6 +44,15 @@ def main():
         if args.tags:
             tags = asyncio.run(handle_tags_command(args.api))
             print(f"{args.api.capitalize()} tags: {tags}")
+            sys.exit(0)
+
+        if args.api == "random" and not args.sfw and not args.nsfw:
+            nsfw_selected = bool(secrets.randbits(1))
+            data = asyncio.run(handle_api_command(args.api, nsfw_selected, args.query, args.limit))
+            flag = "nsfw" if nsfw_selected else "sfw"
+            print(f"\n[{flag.upper()}] Results from {args.api.capitalize()}:")
+            for item in (data if isinstance(data, list) else [data]):
+                print(f" - {item}")
             sys.exit(0)
 
         if api['sfw'].__name__.lower() == "safe_wrapper":

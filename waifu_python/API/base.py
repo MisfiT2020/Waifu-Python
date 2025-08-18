@@ -179,7 +179,8 @@ APIRegistryCMD.register(
 
 APIRegistryCMD.register(
     name="random",
-    sfw_func=RandomWaifu.get_random
+    sfw_func=RandomWaifu.get_random_sfw_image,
+    nsfw_func=RandomWaifu.get_random_nsfw_image
 )
 
 APIRegistryCMD.register(
